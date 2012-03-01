@@ -1,0 +1,10 @@
+# OASIS_START
+# DO NOT EDIT (digest: b68256f0f5c54f1c3ba93caa162b24b6)
+version = "0.1-dev"
+description = "Socket.IO server library"
+requires = "lwt.syntax lwt yojson cohttpd"
+archive(byte) = "socketio.cma"
+archive(native) = "socketio.cmxa"
+exists_if = "socketio.cma"
+# OASIS_STOP
+

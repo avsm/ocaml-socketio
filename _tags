@@ -1,0 +1,37 @@
+# OASIS_START
+# DO NOT EDIT (digest: 2c6839d52c3af29034900ab8507e6fbd)
+# Ignore VCS directories, you can use the same kind of rule outside 
+# OASIS_START/STOP if you want to exclude directories that contains 
+# useless stuff for the build process
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library socketio
+"lib": include
+<lib/*.ml{,i}>: pkg_yojson
+<lib/*.ml{,i}>: pkg_lwt.syntax
+<lib/*.ml{,i}>: pkg_lwt
+<lib/*.ml{,i}>: pkg_cohttpd
+# Executable socketio_test
+"lib_test/socketio_test.byte": use_socketio
+"lib_test/socketio_test.byte": pkg_yojson
+"lib_test/socketio_test.byte": pkg_lwt.syntax
+"lib_test/socketio_test.byte": pkg_lwt
+"lib_test/socketio_test.byte": pkg_cohttpd
+<lib_test/*.ml{,i}>: use_socketio
+<lib_test/*.ml{,i}>: pkg_yojson
+<lib_test/*.ml{,i}>: pkg_lwt.syntax
+<lib_test/*.ml{,i}>: pkg_lwt
+<lib_test/*.ml{,i}>: pkg_cohttpd
+"lib_test/socketio_test.byte": custom
+# OASIS_STOP
+<lib/*>: syntax_camlp4o
+<lib/*>: pkg_lwt.syntax
+true: annot
